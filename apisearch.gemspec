@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A simple hello world gem"
   s.authors     = ["Pedro Escudero"]
   s.email       = 'pedroescudero.zumel@gmail.com'
-  s.files       = ["lib/apisearch.rb"]
+  s.files       = ["lib/apisearch.rb, lib/apisearch/search.rb, lib/apisearch/model.rb"]
   s.homepage    =
     'http://rubygems.org/gems/apisearch'
   s.license       = 'MIT'

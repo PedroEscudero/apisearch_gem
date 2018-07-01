@@ -1,6 +1,13 @@
+require 'net/http'
+require 'apisearch/model'
+require 'apisearch/search'
+
 class Apisearch
 
-  def initialize(params ={})
+  @url = ''
+
+  def initialize(params = {})
+    params.url.value  ?   @url = params.url.vale : raise 'No url'
   end
 
   def connect

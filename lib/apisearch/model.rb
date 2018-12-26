@@ -1,3 +1,3 @@
-class Apisearch::model
+class Apisearch::Model
 
 end

@@ -1,3 +1,0 @@
-class Apisearch::Model
-
-end

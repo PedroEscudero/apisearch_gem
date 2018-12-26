@@ -1,6 +1,4 @@
 require 'net/http'
-require 'apisearch/model'
-require 'apisearch/search'
 
 class Apisearch
 
@@ -15,7 +13,7 @@ class Apisearch
   end
 
   def search
-    if @query
+    if !@query
       Net::HTTP.get('https://apisearch.global.ssl.fastly.net', '/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={hel}')
     else
       Net::HTTP.get('https://apisearch.global.ssl.fastly.net', '/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={#{@query}}')

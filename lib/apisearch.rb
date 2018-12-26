@@ -7,9 +7,8 @@ class Apisearch
   @token = ''
 
   def initialize(params = {})
-    @url = params.url
-    @app_id = params.app_id
-    @token = params.token
+    @url = params[:url]
+    @app_id = params[:app_id]
   end
 
   def search

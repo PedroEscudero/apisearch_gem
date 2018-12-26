@@ -9,9 +9,9 @@ class Apisearch
   @token = ''
 
   def initialize(params = {})
-    params.url.value  ? @url = params.url.value : raise ('No url')
-    params.url.app_id ? @app_id = params.app_id.value : raise ('No app id')
-    params.url.token  ? @token = params.token.value : raise ('No valid token')
+    @url = params.url.value
+    @app_id = params.app_id.value
+    @token = params.token.value
   end
 
   def search

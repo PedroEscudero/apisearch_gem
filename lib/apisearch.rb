@@ -1,4 +1,5 @@
 require "open-uri"
+require 'json'
 
 class Apisearch
 
@@ -21,6 +22,7 @@ class Apisearch
     if @query
       query_result = URI.parse(@query).read
       set_query_results(query_result)
+      query_result
     else
       puts 'No query set. Please set first a query'
     end

@@ -5,6 +5,7 @@ class Apisearch
   attr_reader :total_items
   attr_reader :total_hits
   attr_reader :items
+  attr_reader :query
 
   @url = ''
   @app_id = ''

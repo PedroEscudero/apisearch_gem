@@ -1,6 +1,5 @@
-require 'net/http'
 require "open-uri"
-@data =
+
 class Apisearch
 
   @url = ''
@@ -13,20 +12,30 @@ class Apisearch
   end
 
   def search
-    if !@query
-      puts 'http://apisearch.global.ssl.fastly.net/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={"q":"hel"}'
-      URI.parse('http://apisearch.global.ssl.fastly.net/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={"q":"hel"}').read
+    if @query
+      URI.parse(@query).read
     else
-      #Net::HTTP.get('http://apisearch.global.ssl.fastly.net', '/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={"q":"#{@query}"}')
+      URI.parse('http://apisearch.global.ssl.fastly.net/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={"q":"music"}').read
+      puts 'No query set. Please set first a query'
     end
   end
 
-  def set_query(query)
-    @query = query
+  def set_query_text(query_text)
+    prepare_query(query_text)
   end
 
   def test_connection
-    puts "Testing connection!"
+    if @url && URI.parse(@url).read.status[0]==200
+      puts "Connection works "
+    else
+      puts "Connection fails!"
+    end
+  end
+
+  private
+
+  def prepare_query(query_text)
+    @query = @url . 'v1?app_id='.@app_id. '&query={"q":"#{query_text}"}'
   end
 
 end

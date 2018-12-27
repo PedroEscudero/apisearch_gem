@@ -18,7 +18,8 @@ class Apisearch
 
   def search
     if @query
-      URI.parse(@query).read
+      query_result = URI.parse(@query).read
+      set_query_results(query_result)
     else
       puts 'No query set. Please set first a query'
     end
@@ -42,8 +43,10 @@ class Apisearch
     @query = @url + "/v1?app_id=" + @app_id + "&token=" + @token + "&query={\"q\":\"#{query_text}\"}"
   end
 
-  def query_results
-
+  def set_query_results(query)
+    @total_items = 0
+    @total_hits = 0
+    @items = []
   end
 
 end

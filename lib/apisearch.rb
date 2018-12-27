@@ -22,7 +22,7 @@ class Apisearch
     if @query
       response = URI.parse(@query).read
       set_query_results(response)
-      query_result
+      response
     else
       puts 'No query set. Please set first a query'
     end

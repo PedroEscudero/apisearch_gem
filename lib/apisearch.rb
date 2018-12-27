@@ -13,7 +13,7 @@ class Apisearch
 
   def search
     if !@query
-      put 'http://apisearch.global.ssl.fastly.net/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={hel}'
+      puts 'http://apisearch.global.ssl.fastly.net/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={hel}'
       Net::HTTP.get('http://apisearch.global.ssl.fastly.net', '/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={hel}')
     else
       Net::HTTP.get('http://apisearch.global.ssl.fastly.net', '/v1?app_id=54725861&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={#{@query}}')

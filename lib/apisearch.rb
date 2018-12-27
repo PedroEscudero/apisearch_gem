@@ -35,7 +35,7 @@ class Apisearch
   private
 
   def prepare_query(query_text)
-    @query = @url . 'v1?app_id='.@app_id. '&query={"q":"#{query_text}"}'
+    @query = @url + 'v1?app_id=' + @app_id + '&query={"q":"#{query_text}"}'
   end
 
 end

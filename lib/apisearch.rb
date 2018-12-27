@@ -2,6 +2,10 @@ require "open-uri"
 
 class Apisearch
 
+  attr_reader :total_items
+  attr_reader :total_hits
+  attr_reader :items
+
   @url = ''
   @app_id = ''
   @token = ''
@@ -36,6 +40,10 @@ class Apisearch
 
   def prepare_query(query_text)
     @query = @url + "/v1?app_id=" + @app_id + "&token=" + @token + "&query={\"q\":\"#{query_text}\"}"
+  end
+
+  def query_results
+
   end
 
 end

@@ -36,7 +36,7 @@ class Apisearch
   private
 
   def prepare_query(query_text)
-    @query = @url + "/v1?app_id=" + @app_id + "&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad" +"&query={'q':'#{query_text}'}"
+    @query = @url + "/v1?app_id=" + @app_id + "&token=daf93c2b-40bc-49f2-870e-f8f62ea524ad&query={" + %Q[q] + ":" + %Q[#{query_text}] + "}"
   end
 
 end
